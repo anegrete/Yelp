@@ -50,9 +50,17 @@ class BussinessViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController = segue.destination as! UINavigationController
-        let filtersViewController = destinationViewController.topViewController as! FiltersViewController
-        filtersViewController.delegate = self
+        
+        if segue.identifier == "filterSegue" {
+            let destinationViewController = segue.destination as! UINavigationController
+            let filtersViewController = destinationViewController.topViewController as! FiltersViewController
+            filtersViewController.delegate = self
+        }
+        else if segue.identifier == "detailSegue" {
+            let destinationViewController = segue.destination as! BusinessDetailViewController
+            let indexPath = tableView.indexPath(for: (sender as! BusinessTableViewCell))!
+            destinationViewController.business = businesses![indexPath.row]
+        }
     }
 
     // MARK: - Refresh Control

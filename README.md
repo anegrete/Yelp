@@ -28,7 +28,7 @@ The following **optional** features are implemented:
     - [ ] Implement a custom switch instead of the default UISwitch.
     - [x] Distance filter should expand as in the real Yelp app
     - [x] Categories should show a subset of the full list with a "See All" row to expand. Category list is [here](http://www.yelp.com/developers/documentation/category_list).
-    - [ ] Implement the restaurant detail page.
+    - [x] Implement the restaurant detail page.
 
 The following **additional** features are implemented:
 
@@ -36,6 +36,7 @@ The following **additional** features are implemented:
     - [x] User sees loading state while waiting for the API.
     - [x] User can pull to refresh to remove all filters and see the full list again
     - [x] Index displayed with business name to check easily businesses order, as in Yelp App
+    - [x] Transition to Map/List similar to Yelp app
 - [x] Navigation bar, icons, status bar, search and filter pages customized with similar Yelp colors
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
@@ -47,7 +48,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](Yelp-anegrete.gif)
+![Video Walkthrough](Yelp-anegrete-2.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -67,6 +68,7 @@ static let categories:[String:String] = [["name" : "Afghan", "code": "afghani"],
                                          ["name" : "African", "code": "african"],
                                          ["name" : "American, New", "code": "newamerican"], (etc)]
 the xcode didn't compile and stayed 'indexing', started working after changing to:
+
 static func restaurantsCategoriesOptions() -> [[String:String]] {
 var categories = [["name" : "Afghan", "code": "afghani"]]
 categories.append(["name" : "African", "code": "african"])
